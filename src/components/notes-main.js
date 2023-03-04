@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import NotesArchivesPage from "./notes-archives-page";
 import NotesDetailPage from "./notes-detail-page";
 import NotesHomePage from "./notes-home-page";
+import NotesNew from "./notes-new";
 
 export default function NotesMain({ notes }) {
   console.log("notes :>> ", notes);
@@ -11,15 +12,8 @@ export default function NotesMain({ notes }) {
       {/* Home Page */}
       <Routes>
         <Route path="/" element={<NotesHomePage notes={notes} />}></Route>
-      </Routes>
-
-      {/* Detail Page */}
-      <Routes>
         <Route path="/notes/:id" element={<NotesDetailPage />}></Route>
-      </Routes>
-
-      {/* Archive Page */}
-      <Routes>
+        <Route path="/notes/new" element={<NotesNew />}></Route>
         <Route
           path="/archivers"
           element={<NotesArchivesPage notes={notes} />}

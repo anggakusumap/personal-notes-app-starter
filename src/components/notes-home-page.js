@@ -1,6 +1,7 @@
 import React from "react";
-import NotesAction from "./notes-action";
+import NotesActionHomePage from "./notes-action-home-page";
 import NotesList from "./notes-list";
+import NotesListEmpty from "./notes-list-empty";
 import NotesSearchBar from "./notes-search-bar";
 
 export default function NotesHomePage({ notes }) {
@@ -8,12 +9,9 @@ export default function NotesHomePage({ notes }) {
   return (
     <section className="homepage">
       <h2>Catatan Aktif</h2>
-      {/* Search Bar */}
       <NotesSearchBar />
-      {/* Notes List */}
-      <NotesList notes={notes} />
-      {/* Home Page Action */}
-      <NotesAction />
+      {notes.length !== 0 ? <NotesList notes={notes} /> : <NotesListEmpty />}
+      <NotesActionHomePage />
     </section>
   );
 }
