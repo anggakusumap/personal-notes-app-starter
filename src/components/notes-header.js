@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function NotesHeader() {
   return (
@@ -9,7 +10,7 @@ export default function NotesHeader() {
       <nav className="navigation">
         <ul>
           <li>
-            <a href="/archivers">Arsip</a>
+            <Link to={"/archivers"}>Arsip</Link>
           </li>
         </ul>
       </nav>
