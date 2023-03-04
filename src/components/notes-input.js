@@ -1,7 +1,7 @@
 import React from "react";
 import NotesActionNewPage from "./notes-action-new-page";
 
-export default function NotesNew() {
+export default function NotesInput() {
   return (
     <section className="add-new-page">
       <div className="add-new-page__input">

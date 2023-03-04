@@ -1,8 +1,8 @@
 import React from "react";
+import NotesList from "../components/notes-list";
+import NotesListEmpty from "../components/notes-list-empty";
+import NotesSearchBar from "../components/notes-search-bar";
 import { getArchivedNotes } from "../utils/local-data";
-import NotesList from "./notes-list";
-import NotesListEmpty from "./notes-list-empty";
-import NotesSearchBar from "./notes-search-bar";
 
 export default function NotesArchivesPage() {
   const notesArchived = getArchivedNotes();

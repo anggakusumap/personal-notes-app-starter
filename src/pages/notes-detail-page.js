@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import NotesActionDetailPage from "../components/notes-action-detail-page";
 import { getNote } from "../utils/local-data";
-import NotesActionDetailPage from "./notes-action-detail-page";
 
 export default function NotesDetailPage() {
   const { id } = useParams();

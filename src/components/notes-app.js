@@ -14,7 +14,6 @@ class NotesApp extends React.Component {
   }
 
   render() {
-    console.log("this.state.notes :>> ", this.state.notes);
     return (
       <div className="app-container">
         <NotesHeader />
