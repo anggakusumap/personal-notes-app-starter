@@ -1,4 +1,5 @@
 import React from "react";
+import { showFormattedDate } from "../utils";
 import NotesItem from "./notes-item";
 
 export default function NotesList({ notes }) {
@@ -10,7 +11,7 @@ export default function NotesList({ notes }) {
           id={note.id}
           title={note.title}
           body={note.body}
-          createdAt={note.createdAt}
+          createdAt={showFormattedDate(note.createdAt)}
           archived={note.archived}
         />
       ))}

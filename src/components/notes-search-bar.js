@@ -1,9 +1,14 @@
 import React from "react";
 
-export default function NotesSearchBar() {
+export default function NotesSearchBar({ keyword, keywordChange }) {
   return (
     <section className="search-bar">
-      <input type="text" placeholder="Cari berdasarkan judul..." />
+      <input
+        type="text"
+        placeholder="Cari berdasarkan judul..."
+        value={keyword}
+        onChange={(event) => keywordChange(event.target.value)}
+      />
     </section>
   );
 }
