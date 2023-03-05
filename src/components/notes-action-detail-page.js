@@ -13,7 +13,7 @@ export default function NotesActionDetailPage({ id, onDelete, onArchive }) {
 }
 
 NotesActionDetailPage.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
   onArchive: PropTypes.func.isRequired,
 };

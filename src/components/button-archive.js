@@ -16,6 +16,6 @@ export default function ButtonArchive({ id, onArchive }) {
 }
 
 ButtonArchive.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   onArchive: PropTypes.func.isRequired,
 };

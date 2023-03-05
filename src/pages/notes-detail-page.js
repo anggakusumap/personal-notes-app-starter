@@ -47,7 +47,6 @@ class NotesDetailPage extends React.Component {
   }
 
   render() {
-    console.log("this.state.note :>> ", this.state.note);
     return (
       <section className="detail-page">
         <h3 className="detail-page__title">{this.state.note.title}</h3>

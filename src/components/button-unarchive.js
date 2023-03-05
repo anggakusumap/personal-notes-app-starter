@@ -16,6 +16,6 @@ export default function ButtonUnarchive({ id, onUnarchive }) {
 }
 
 ButtonUnarchive.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   onUnarchive: PropTypes.func.isRequired,
 };

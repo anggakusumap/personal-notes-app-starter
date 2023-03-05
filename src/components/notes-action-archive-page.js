@@ -13,7 +13,7 @@ export default function NotesActionArchivePage({ id, onDelete, onUnarchive }) {
 }
 
 NotesActionArchivePage.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
   onUnarchive: PropTypes.func.isRequired,
 };
