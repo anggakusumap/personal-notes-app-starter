@@ -9,6 +9,7 @@ import {
   getNote,
   unarchiveNote,
 } from "../utils/local-data";
+import PropTypes from "prop-types";
 
 function NotesDetailPageWrapper() {
   const { id } = useParams();
@@ -72,5 +73,10 @@ class NotesDetailPage extends React.Component {
     );
   }
 }
+
+NotesDetailPage.propTypes = {
+  note: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+};
 
 export default NotesDetailPageWrapper;

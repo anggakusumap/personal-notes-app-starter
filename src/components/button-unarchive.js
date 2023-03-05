@@ -1,5 +1,6 @@
 import React from "react";
 import { MdUnarchive } from "react-icons/md";
+import PropTypes from "prop-types";
 
 export default function ButtonUnarchive({ id, onUnarchive }) {
   return (
@@ -13,3 +14,8 @@ export default function ButtonUnarchive({ id, onUnarchive }) {
     </button>
   );
 }
+
+ButtonUnarchive.propTypes = {
+  id: PropTypes.number.isRequired,
+  onUnarchive: PropTypes.func.isRequired,
+};

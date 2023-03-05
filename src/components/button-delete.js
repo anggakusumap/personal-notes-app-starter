@@ -1,5 +1,6 @@
 import React from "react";
 import { MdDeleteOutline } from "react-icons/md";
+import PropTypes from "prop-types";
 
 export default function ButtonDelete({ id, onDelete }) {
   return (
@@ -13,3 +14,8 @@ export default function ButtonDelete({ id, onDelete }) {
     </button>
   );
 }
+
+ButtonDelete.propTypes = {
+  id: PropTypes.number.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};

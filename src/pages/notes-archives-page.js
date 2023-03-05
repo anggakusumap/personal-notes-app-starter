@@ -4,6 +4,7 @@ import NotesList from "../components/notes-list";
 import NotesListEmpty from "../components/notes-list-empty";
 import NotesSearchBar from "../components/notes-search-bar";
 import { getArchivedNotes } from "../utils/local-data";
+import PropTypes from "prop-types";
 
 function NotesArchivesPageWrapper() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -65,5 +66,9 @@ class NotesArchivesPage extends React.Component {
     );
   }
 }
+
+NotesArchivesPage.propTypes = {
+  keywordChange: PropTypes.func.isRequired,
+};
 
 export default NotesArchivesPageWrapper;

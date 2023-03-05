@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function NotesItem({ id, title, body, createdAt, archived }) {
+export default function NotesItem({ id, title, body, createdAt }) {
   return (
     <article className="note-item" key={id}>
       <h3 className="note-item__title">
@@ -12,3 +13,10 @@ export default function NotesItem({ id, title, body, createdAt, archived }) {
     </article>
   );
 }
+
+NotesItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+};

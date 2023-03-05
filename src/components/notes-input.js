@@ -1,5 +1,6 @@
 import React from "react";
 import NotesActionNewPage from "./notes-action-new-page";
+import PropTypes from "prop-types";
 
 class NotesInput extends React.Component {
   constructor(props) {
@@ -62,4 +63,9 @@ class NotesInput extends React.Component {
     );
   }
 }
+
+NotesInput.propTypes = {
+  addNote: PropTypes.func.isRequired,
+};
+
 export default NotesInput;

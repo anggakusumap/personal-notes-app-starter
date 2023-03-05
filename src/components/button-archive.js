@@ -1,5 +1,6 @@
 import React from "react";
 import { IoMdArchive } from "react-icons/io";
+import PropTypes from "prop-types";
 
 export default function ButtonArchive({ id, onArchive }) {
   return (
@@ -13,3 +14,8 @@ export default function ButtonArchive({ id, onArchive }) {
     </button>
   );
 }
+
+ButtonArchive.propTypes = {
+  id: PropTypes.number.isRequired,
+  onArchive: PropTypes.func.isRequired,
+};

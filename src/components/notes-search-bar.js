@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function NotesSearchBar({ keyword, keywordChange }) {
   return (
@@ -12,3 +13,8 @@ export default function NotesSearchBar({ keyword, keywordChange }) {
     </section>
   );
 }
+
+NotesSearchBar.propTypes = {
+  keyword: PropTypes.string.isRequired,
+  keywordChange: PropTypes.func.isRequired,
+};
