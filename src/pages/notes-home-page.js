@@ -70,8 +70,7 @@ class NotesHomePage extends React.Component {
   }
 
   render() {
-    const notesActive = getActiveNotes();
-    const notesSearchActive = notesActive.filter((note) => {
+    const notesSearchActive = this.state.notes.filter((note) => {
       return note.title
         .toLowerCase()
         .includes(this.state.keyword.toLowerCase());
