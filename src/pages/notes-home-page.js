@@ -5,12 +5,7 @@ import NotesActionHomePage from "../components/notes-action-home-page";
 import NotesList from "../components/notes-list";
 import NotesListEmpty from "../components/notes-list-empty";
 import NotesSearchBar from "../components/notes-search-bar";
-import {
-  archiveNote,
-  deleteNote,
-  getActiveNotes,
-  getAllNotes,
-} from "../utils/local-data";
+import { getActiveNotes } from "../utils/local-data";
 
 function NotesHomePageWrapper() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -36,27 +31,7 @@ class NotesHomePage extends React.Component {
       keyword: props.defaultKeyword || "",
     };
 
-    this.onDeleteHandler = this.onDeleteHandler.bind(this);
-    this.onArchiveHandler = this.onArchiveHandler.bind(this);
     this.onKeywordChangeHandler = this.onKeywordChangeHandler.bind(this);
-  }
-
-  onDeleteHandler(id) {
-    deleteNote(id);
-    this.setState(() => {
-      return {
-        notes: getAllNotes(),
-      };
-    });
-  }
-
-  onArchiveHandler(id) {
-    archiveNote(id);
-    this.setState(() => {
-      return {
-        notes: getAllNotes(),
-      };
-    });
   }
 
   onKeywordChangeHandler(keyword) {
@@ -89,7 +64,10 @@ class NotesHomePage extends React.Component {
         ) : (
           <NotesListEmpty />
         )}
-        <NotesActionHomePage />
+        <NotesActionHomePage
+          onArchive={this.onArchiveHandler}
+          onDelete={this.onDeleteHandler}
+        />
       </section>
     );
   }
