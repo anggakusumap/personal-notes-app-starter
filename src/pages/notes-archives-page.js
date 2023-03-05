@@ -69,6 +69,7 @@ class NotesArchivesPage extends React.Component {
 
 NotesArchivesPage.propTypes = {
   keywordChange: PropTypes.func.isRequired,
+  defaultKeyword: PropTypes.string,
 };
 
 export default NotesArchivesPageWrapper;

@@ -6,6 +6,7 @@ import NotesList from "../components/notes-list";
 import NotesListEmpty from "../components/notes-list-empty";
 import NotesSearchBar from "../components/notes-search-bar";
 import { getActiveNotes } from "../utils/local-data";
+import PropTypes from "prop-types";
 
 function NotesHomePageWrapper() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -72,5 +73,10 @@ class NotesHomePage extends React.Component {
     );
   }
 }
+
+NotesHomePage.propTypes = {
+  keywordChange: PropTypes.func.isRequired,
+  defaultKeyword: PropTypes.string,
+};
 
 export default NotesHomePageWrapper;

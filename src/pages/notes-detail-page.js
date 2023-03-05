@@ -15,7 +15,9 @@ function NotesDetailPageWrapper() {
   const { id } = useParams();
   const note = getNote(id);
   const navigate = useNavigate();
-
+  if (note === undefined) {
+    return <p className="center">Catatan tidak ditemukan</p>;
+  }
   return <NotesDetailPage note={note} navigate={navigate} />;
 }
 

@@ -15,10 +15,7 @@ export default function NotesMain({ notes }) {
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/notes/:id" element={<NotesDetailPage />}></Route>
         <Route path="/notes/new" element={<NotesAddPage />}></Route>
-        <Route
-          path="/archivers"
-          element={<NotesArchivesPage notes={notes} />}
-        ></Route>
+        <Route path="/archivers" element={<NotesArchivesPage />}></Route>
       </Routes>
     </main>
   );
