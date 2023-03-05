@@ -1,11 +1,11 @@
 import React from "react";
-import ButtonArchive from "./button-archive";
 import ButtonDelete from "./button-delete";
+import ButtonUnarchive from "./button-unarchive";
 
-export default function NotesActionDetailPage({ id, onDelete, onArchive }) {
+export default function NotesActionArchivePage({ id, onDelete, onUnarchive }) {
   return (
     <div className="detail-page__action">
-      <ButtonArchive id={id} onArchive={onArchive} />
+      <ButtonUnarchive id={id} onUnarchive={onUnarchive} />
       <ButtonDelete id={id} onDelete={onDelete} />
     </div>
   );

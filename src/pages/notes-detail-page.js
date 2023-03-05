@@ -1,8 +1,14 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import NotesActionArchivePage from "../components/notes-action-archive-page";
 import NotesActionDetailPage from "../components/notes-action-detail-page";
 import { showFormattedDate } from "../utils";
-import { archiveNote, deleteNote, getNote } from "../utils/local-data";
+import {
+  archiveNote,
+  deleteNote,
+  getNote,
+  unarchiveNote,
+} from "../utils/local-data";
 
 function NotesDetailPageWrapper() {
   const { id } = useParams();
@@ -21,6 +27,7 @@ class NotesDetailPage extends React.Component {
 
     this.onDeleteHandler = this.onDeleteHandler.bind(this);
     this.onArchiveHandler = this.onArchiveHandler.bind(this);
+    this.onUnarchiveHandler = this.onUnarchiveHandler.bind(this);
   }
 
   onDeleteHandler(id) {
@@ -33,8 +40,13 @@ class NotesDetailPage extends React.Component {
     this.props.navigate("/");
   }
 
+  onUnarchiveHandler(id) {
+    unarchiveNote(id);
+    this.props.navigate("/");
+  }
+
   render() {
-    console.log("this.props.note :>> ", this.props.note);
+    console.log("this.state.note :>> ", this.state.note);
     return (
       <section className="detail-page">
         <h3 className="detail-page__title">{this.state.note.title}</h3>
@@ -42,11 +54,20 @@ class NotesDetailPage extends React.Component {
           {showFormattedDate(this.state.note.createdAt)}
         </p>
         <div className="detail-page__body">{this.state.note.body}</div>
-        <NotesActionDetailPage
-          id={this.props.note.id}
-          onDelete={this.onDeleteHandler}
-          onArchive={this.onArchiveHandler}
-        />
+        {this.state.note.archived === true && (
+          <NotesActionArchivePage
+            id={this.props.note.id}
+            onDelete={this.onDeleteHandler}
+            onUnarchive={this.onUnarchiveHandler}
+          />
+        )}
+        {this.state.note.archived === false && (
+          <NotesActionDetailPage
+            id={this.props.note.id}
+            onDelete={this.onDeleteHandler}
+            onArchive={this.onArchiveHandler}
+          />
+        )}
       </section>
     );
   }

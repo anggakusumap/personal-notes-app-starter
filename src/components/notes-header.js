@@ -5,7 +5,7 @@ export default function NotesHeader() {
   return (
     <header>
       <h1>
-        <a href="/">Aplikasi Catatan</a>
+        <Link to="/">Aplikasi Catatan</Link>
       </h1>
       <nav className="navigation">
         <ul>
