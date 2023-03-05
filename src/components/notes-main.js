@@ -6,7 +6,7 @@ import NotesHomePageWrapper from "../pages/notes-home-page";
 import NotesAddPage from "../pages/notes-add-page";
 import NotFound from "./not-found";
 
-export default function NotesMain({ notes }) {
+export default function NotesMain() {
   return (
     <main>
       {/* Home Page */}
